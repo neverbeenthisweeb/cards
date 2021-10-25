@@ -21,4 +21,9 @@ defmodule Cards do
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
+
+  # How to access a value in a tuple?
+  def deal(deck, hand_size) do
+    Enum.split(deck, hand_size)
+  end
 end
