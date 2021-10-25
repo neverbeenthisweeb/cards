@@ -23,6 +23,8 @@ defmodule Cards do
   end
 
   # How to access a value in a tuple?
+  # Pattern matching is Elixir's replacement for variable assignment
+  # { hand, rest_of_deck } = deal(deck, hand_size)
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
