@@ -1,4 +1,11 @@
 defmodule Cards do
+  @moduledoc """
+    Provides method for creating and handling a deck of cards
+  """
+
+  @doc """
+    Returns a list of strings representing a deck of playing cards
+  """
   def create_deck do
     values = ["Ace", "Two", "Three"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -22,6 +29,18 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  @doc """
+    Divides a deck into a hand and the remainder of the deck.
+    The `hand_size` argument indicates how many cards should
+    be in the hand.
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> { hand, deck } = Cards.deal(deck, 1)
+      iex> hand
+      ["Ace of Spades"]
+  """
   # How to access a value in a tuple?
   # Pattern matching is Elixir's replacement for variable assignment
   # { hand, rest_of_deck } = deal(deck, hand_size)
